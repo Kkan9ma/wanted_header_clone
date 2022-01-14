@@ -1,19 +1,57 @@
+import styled from 'styled-components';
+import iconMenuImage from './icon-menu.png';
+import mainLogoImage from './main-logo.png';
+
+const NavTopContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+const NavTopLogoContainer = styled.div`
+  display: flex;
+`
+
+const NavTopLogoButton = styled.button`
+  padding: 0;
+  border: 0;
+  margin:0;
+  margin-top: -2px;
+  margin-right: 15px;
+  background: none;
+`
+
+const NavTopIconMenuImage = styled.img`
+  width: 17px;
+  height: 14px;
+  object-fit: contain;
+  cursor: pointer;
+`
+
+const NavTopMainLogo = styled.a`
+  display: block;
+  text-decoration: inherit;
+  cursor: pointer;
+`
+
+const NavTopMainLogoImage = styled.img`
+  width: 75px;
+  height: 17px;
+`
+
 function NavTop() {
   return (
     <>
-      <div className="MainBar_MainBar_nav_top__wXy52">
-        <div className="MainBar_MainBar_nav_top_logo__Y_Q5D"><button type="button" aria-label="jobCategoryMenuButton"
-          data-attribute-id="gnb" data-gnb-kind="jobCategoryMenu" className="MainBar_hamberger__yQfei"><img
-            src="https://static.wanted.co.kr/images/icon-menu.png" alt="hamberger menu"
-            style={{ width: "17px", height: "14px", objectFit: "contain", }}
-          />
-        </button><a href="/"
-          className="MainBar_MainBar_logo__bGymr" aria-label="homeLink" data-attribute-id="gnb"
-          data-gnb-kind="home"><i className="icon-logo_new"></i></a></div>
-        <button id="gnbSignupBtn"
-          className="xsSignUpButton isLoggedIn" type="button" data-attribute-id="gnb"
-          data-gnb-kind="signupLogin">회원가입하기</button>
-      </div>
+      <NavTopContainer>
+        <NavTopLogoContainer>
+          <NavTopLogoButton>
+            <NavTopIconMenuImage src={iconMenuImage} />
+          </NavTopLogoButton>
+          <NavTopMainLogo>
+            <NavTopMainLogoImage src={mainLogoImage} />
+          </NavTopMainLogo>
+        </NavTopLogoContainer>
+      </NavTopContainer>
     </>
   )
 }
