@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Aside from './Aside';
-import Menu from './Menu';
+import NavAside from './NavAside';
+import NavMenu from './NavMenu';
 import NavTop from './NavTop';
 
 const NavHeader = styled.div`
@@ -22,7 +22,6 @@ const NavMainBar = styled.div`
     width: 87.72%
   }
 `
-
 const NavMain = styled.nav`
   display: flex;
   align-items: center;
@@ -38,8 +37,8 @@ function NavBar() {
         <NavMainBar>
           <NavMain>
             <NavTop />
-            <Menu />
-            <Aside />
+            <NavMenu />
+            <NavAside />
           </NavMain>
         </NavMainBar>
       </NavHeader>

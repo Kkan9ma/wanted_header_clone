@@ -1,6 +1,6 @@
 import image from '../../profile_default.png';
 
-function Aside() {
+function NavAside() {
   return (
     <>
       <aside className="Aside_className___e5Bi isLoggedIn">
@@ -72,4 +72,4 @@ function Aside() {
   )
 }
 
-export default Aside;
+export default NavAside;

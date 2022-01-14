@@ -1,4 +1,4 @@
-function Menu() {
+function NavMenu() {
   return (
     <>
       <ul className="Menu_className__gGcYQ">
@@ -29,4 +29,4 @@ function Menu() {
   )
 }
 
-export default Menu;
+export default NavMenu;
