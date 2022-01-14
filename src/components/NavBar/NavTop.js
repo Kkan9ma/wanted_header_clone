@@ -6,6 +6,18 @@ const NavTopContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+
+  @media (max-width: 767px) {
+    height: 60px;
+    width: 100%;
+    padding: 15px 20px;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    padding: 15px 0;
+    height: 60px;
+    width: 100%;
+  }  
 `
 
 const NavTopLogoContainer = styled.div`

@@ -55,7 +55,7 @@ const HomeMenuLabel = styled.a`
   cursor: pointer;
 
   @media screen and (max-width: 767px) {
-    padding: 11px 10px 19px;
+    padding: 11px 10px 19px 20px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -115,8 +115,8 @@ const MenuLabel = styled.a`
 
 const MenuBadge = styled.em`
   position: absolute;
-  top: 10px;
-  right: -5px;
+  top: 0.5rem;
+  // right: -5px;
   pointer-events: none;
   font-style: normal;
 `
@@ -152,7 +152,6 @@ function NavMenu() {
             이력서
           </MenuLabel>
         </HiddenMenu>
-
         <HiddenMenu>
           <MenuLabel>
             커뮤니티
@@ -171,13 +170,11 @@ function NavMenu() {
             </MenuBadge>
           </MenuLabel>
         </HiddenMenu>
-
         <HiddenMenu>
           <MenuLabel>
             프리랜서
           </MenuLabel>
         </HiddenMenu>
-
         <HiddenMenu>
           <MenuLabel>
             AI 합격예측

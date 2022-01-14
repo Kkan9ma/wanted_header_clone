@@ -14,9 +14,25 @@ const NavHeader = styled.div`
 const NavMainBar = styled.div`
   position: relative;
   max-width: 1060px;
-  height: 50px;
+  // height: 50px;
 
-  @media screen and (max-width: 1200px) {
+  @media (max-width: 767px) {
+      height: 110px;
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    height: 110px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    margin: 0 auto;
+    height: 50px;
+    width: 90%;
+  }
+
+  @media screen and (min-width: 1200px) {
     margin: 0 auto;
     height: 50px;
     width: 87.72%
