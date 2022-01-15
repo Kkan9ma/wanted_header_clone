@@ -32,7 +32,7 @@ const NavMainBar = styled.div`
     width: 90%;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media (min-width: 1200px) {
     margin: 0 auto;
     height: 50px;
     width: 87.72%

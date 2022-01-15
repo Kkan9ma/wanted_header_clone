@@ -43,11 +43,7 @@ const SearchButton = styled.button`
   position: relative;
   margin-top: 5px;
   
-  @media (max-width: 767px) {
-    margin: 0;
-  }
-
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media (max-width: 991px) {
     margin: 0;
   }
 `
@@ -57,13 +53,10 @@ const NotiButton = styled.button`
   margin-right: 10px;
   margin-top: 5px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     margin: 0;
   }
 
-  @media (min-width: 768px) and (max-width: 991px) {
-    margin: 0;
-  }
   @media (min-width: 992px) and (max-width: 1199px) {
     margin-right: 5px;
   }
@@ -94,12 +87,7 @@ const ProfileBox = styled.li`
   align-items: center;
   margin-right: 5px;
 
-  @media (max-width: 767px) {
-    display:none!important;
-    margin-right: 0;
-  }
-
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media (max-width: 991px) {
     display: none!important;
     margin-right: 0;
   }
@@ -114,25 +102,22 @@ const ProfileButton = styled.button`
   padding: 0!important;
   margin-right: 11px!important;
 
-  @media (max-width: 767px) {
-    margin-right: 0;
-  }
-  @media (min-width: 768px) and (max-width: 1199px) {
+  @media (max-width: 1199px) {
     margin-right: 0;
   }
   
 `
 
 const AvatarBorder = styled.div`
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1px solid #e1e2e3;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e1e2e3;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 `
 
 const AvatarImage = styled.img`
@@ -190,11 +175,7 @@ const DashboardButton = styled.a`
   align-items: center;
   display: flex;
 
-  @media (max-width: 767px) {
-    margin: 0;
-  }
-
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media (max-width: 991px) {
     margin: 0;
   }
 `

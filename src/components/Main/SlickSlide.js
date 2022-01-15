@@ -35,17 +35,7 @@ const SlideImageBanner = styled.div`
 const SlideImageContainer = styled.div`
   // filter: brightness(50%); // active면 100%
 
-  @media (max-width: 767px) {
-    height: 183px;
-    border-radius: 3px 3px 0 0;
-  }
-
-  @media (min-width: 768px) and (max-width: 991px) {
-    height: 183px;
-    border-radius: 3px 3px 0 0;
-  }
-
-  @media (min-width: 992px) and (max-width: 1199px) {
+  @media (max-width: 767px) and (max-width: 1199px) {
     height: 183px;
     border-radius: 3px 3px 0 0;
   }
@@ -62,24 +52,10 @@ const SlideImageAnchor = styled.a`
   text-decoration: inherit;
   cursor: pointer;
 
-  @media (max-width: 767px) {
+  @media (max-width: 767px) and (max-width: 1199px) {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-  }
-
-  @media (min-width: 768px) and (max-width: 991px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-
-  @media (min-width: 992px) and (max-width: 1199px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100%;
   }
 `;
