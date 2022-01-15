@@ -1,69 +1,304 @@
+import styled from 'styled-components';
+
+const SlickSlideContainer = styled.div`
+  margin-bottom: 0;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+`;
+
+const SlickList = styled.div`
+  padding: 0px 50px;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0px;
+`;
+
+const SlickTrack = styled.div`
+  position: relative;
+  left: 0px;
+  top: 0px;
+  display: block;
+`;
+
+const SlickSlide = styled.div`
+  position: relative;
+  display: block;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  outline: none;
+
+  @media (max-width: 1199px) {
+    width: calc(100vw - 80px);
+  }
+
+  @media (min-width: 1200px) {
+    width: 1060px;
+    padding: 0 12px;
+    box-sizing: content-box;
+  }
+`;
+
+const MarginDivision = styled.div`
+  margin: 20px 10px;
+
+  @media (min-width: 1200px) {
+    margin: 0;
+  }
+`;
+
+const SlideImageBanner = styled.div`
+  width: 100%;
+  display: inline-block; 
+`;
+
+const SlideImageContainer = styled.div`
+  // filter: brightness(50%); // active면 100%
+
+  @media (max-width: 767px) {
+    height: 183px;
+    border-radius: 3px 3px 0 0;
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    height: 183px;
+    border-radius: 3px 3px 0 0;
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    height: 183px;
+    border-radius: 3px 3px 0 0;
+  }
+`;
+
+// //TODO: 다른 width에 따른 다른 사이즈 이미지 파일 
+const SlideImageAnchor = styled.a`
+
+  filter: brightness(100%);
+  @media (min-width: 992px) and (max-width: 1199px) {
+    height: 183px;
+    border-radius: 3px 3px 0 0;
+  }
+  color: inherit;
+  text-decoration: inherit;
+  cursor: pointer;
+
+  @media (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+`;
+
+const SlideImage = styled.img`
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+`
+
+// TODO: 애니메이션
+const SlideImageInfoContainer = styled.div`
+  animation: none;
+  text-align: center;
+
+  @media (min-width: 1200px) {
+    position: absolute;
+    bottom: 28px;
+    width: 330px;
+    height: 146px;
+    border-radius: 4px;
+    background-color: #fff;
+    opacity: 0;
+    text-align: left;
+    left: 34px;
+    // animation: Information_in__LsISw .4s ease-in-out;
+    // animation-duration: 0.4s;
+    // animation-timing-function: ease-in-out;
+    // animation-delay: 0s;
+    // animation-iteration-count: 1;
+    // animation-direction: normal;
+    // animation-fill-mode: none;
+    // animation-play-state: running;
+
+    // @keyframes Information_in__LsISw {
+    
+    // }
+    opacity: 1;
+  }
+`
+
+const ImageInfoCardTitle = styled.h2`
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 700;
+  color: #333;
+  width: "auto";
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+  overflow: hidden;
+
+  @media (min-width: 1200px) {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+`;
+
+const ImageInfoCardSubTitle = styled.h3`
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.15;
+  color: #666;
+  width: "auto";
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  @media (min-width: 1200px) {
+    margin: 0 20px;
+    height: 44px;
+    font-size: 14px;
+    line-height: 1.64;
+    color: #333;
+  }
+`;
+
+const ImageInfoDivider = styled.hr`
+  box-sizing: content-box;
+  height: 1px;
+  margin: 0;
+  border: none;
+  flex-shrink: 0;
+  background-color: #ececec;
+  display: none;
+
+  @media (min-width: 1200px) {
+    display: block;
+  }
+`;
+
+const ImageButtonAnchor = styled.a`
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: #36f;
+  height: 40px;
+  padding: 6px 8px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  min-width: 64px;
+  box-sizing: border-box;
+  border-radius: 25px;
+  cursor: pointer;
+
+  @media (min-width: 1200px) {
+    margin: 6px 0 0 13px;
+  }
+`;
+
+const ImageButtonLabel = styled.span`
+  width: 100%;
+  font-size: inherit;
+  font-weight: inherit;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  color: inherit;
+`;
+
+const ImageButtonEndIcon = styled.span`
+  margin-top: -2px;
+  margin-right: -1px;
+  margin-left: 2px;
+`;
+
+const ImageButtonSvgIconContainer = styled.span`
+  width: 100%;
+  display: flex;
+  align-items: inherit;
+  justify-content: inherit;
+`;
+
+const ImageButtonSvgIcon = styled.svg`
+  overflow: hidden;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  flex-shrink: 0;
+  font-size: inherit;
+
+  viewBox: 0 0 18 18;
+`
+
 function SlickSlider() {
   return (
     <>
-      <div className="slick-slider slick-initialized" dir="ltr">
-        <div className="slick-list" style={{ padding: "0px 50px" }}>
-          <div
-            className="slick-track"
-            style={{
-              opacity: 1,
-              width: 40392,
-              transform: "translate3d(-16054px, 0px, 0px)"
-            }}
-          >
-            <div
-              data-index={-9}
-              tabIndex={-1}
-              className="slick-slide slick-cloned"
-              aria-hidden="true"
-              style={{ width: 1060 }}
-            >
-              <div>
-                <div
-                  data-attribute-id="home__mainBanner__click"
-                  data-landing-uri="/events/pre_onboarding_course_6"
-                  data-link-kind="EVENT_DETAIL"
-                  data-content-title="개발자 되고싶은 분들!?"
-                  tabIndex={-1}
-                  style={{ width: "100%", display: "inline-block" }}
-                >
-                  <div className="Image_Image__T6WBp">
-                    <a href="/events/pre_onboarding_course_6" >
-                      <img
-                        src="https://static.wanted.co.kr/images/banners/1473/41f7b36e.jpg"
-                        alt="개발자 되고싶은 분들!?"
-                        className="Image_Image__image__Y2rLN"
-                      />
-                    </a>
-                  </div>
-                  <div className="Information_Information__SwERN">
-                    <h2>개발자 되고싶은 분들!?</h2>
-                    <h3>프론트엔드 무료 교육과정 참여하기</h3>
-                    <hr className="Divider_Divider__root__f2LD0 Information_Information__divider__Z8vel" />
-                    <a
-                      href="/events/pre_onboarding_course_6"
-                      className="Button_Button__root__V1ie3 Button_Button__text__GCOTx Button_Button__textPrimary__hcFzK Button_Button__sizeMedium__k0A1w Information_Information__directButton__8Kgp3"
-
-                    >
-                      <span className="Button_Button__label__1Kk0v">
+      <SlickSlideContainer>
+        <SlickList>
+          <SlickTrack>  {/* todo: animation */}
+            <SlickSlide>
+              <MarginDivision>
+                <SlideImageBanner>
+                  <SlideImageContainer>
+                    <SlideImageAnchor>
+                      <SlideImage src={'https://static.wanted.co.kr/images/banners/1473/41f7b36e.jpg'} />
+                    </SlideImageAnchor>
+                  </SlideImageContainer>
+                  <SlideImageInfoContainer>
+                    <ImageInfoCardTitle>
+                      개발자 되고싶은 분들!?
+                    </ImageInfoCardTitle>
+                    <ImageInfoCardSubTitle>
+                      프론트엔드 무료 교육과정 참여하기
+                    </ImageInfoCardSubTitle>
+                    <ImageInfoDivider />
+                    <ImageButtonAnchor>
+                      <ImageButtonLabel>
                         바로가기
-                        <span className="Button_Button__endIcon__MpDfc">
-                          <span className="SvgIcon_SvgIcon__root__8vwon">
-                            <svg
-                              className="SvgIcon_SvgIcon__root__svg__DKYBi"
-                              viewBox="0 0 18 18"
-                            >
+                        <ImageButtonEndIcon>
+                          <ImageButtonSvgIconContainer>
+                            <ImageButtonSvgIcon>
                               <path d="m11.955 9-5.978 5.977a.563.563 0 0 0 .796.796l6.375-6.375a.563.563 0 0 0 0-.796L6.773 2.227a.562.562 0 1 0-.796.796L11.955 9z" />
-                            </svg>
-                          </span>
-                        </span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
+                            </ImageButtonSvgIcon>
+                          </ImageButtonSvgIconContainer>
+                        </ImageButtonEndIcon>
+                      </ImageButtonLabel>
+                    </ImageButtonAnchor>
+                  </SlideImageInfoContainer>
+                </SlideImageBanner>
+              </MarginDivision>
+            </SlickSlide>
+            {/* <div
               data-index={-8}
               tabIndex={-1}
               className="slick-slide slick-cloned"
@@ -1426,10 +1661,10 @@ function SlickSlider() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+            </div> */}
+          </SlickTrack>
+        </SlickList>
+      </SlickSlideContainer>
 
     </>
   )
