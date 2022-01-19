@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import SlickSlide from './SlickSlide';
 import { SlickSlideDatas } from '../../datas/SlideDatas';
+import ArrowButton from './ArrowButton';
 
 const SlickSlideContainer = styled.div`
   margin-bottom: 0;
@@ -24,7 +25,18 @@ const SlickTrack = styled.div`
   position: relative;
   left: 0px;
   top: 0px;
-  display: block;
+
+  display: grid;
+  grid-auto-flow: column;  
+  width: 100%;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+
+  &:active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+  }
 `;
 
 function SlickSlider() {
@@ -32,7 +44,7 @@ function SlickSlider() {
     <>
       <SlickSlideContainer>
         <SlickList>
-          <SlickTrack>  {/* todo: animation */}
+          <SlickTrack>
             {SlickSlideDatas.map(({ imageURL, cardTitle, cardSubTitle }, index) =>
               <SlickSlide
                 key={index} imageURL={imageURL}
@@ -42,7 +54,8 @@ function SlickSlider() {
           </SlickTrack>
         </SlickList>
       </SlickSlideContainer>
-
+      <ArrowButton direction='next' />
+      <ArrowButton direction='prev' />
     </>
   )
 }

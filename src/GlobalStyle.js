@@ -62,6 +62,12 @@ const ResetGlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+
+  .active {
+    background: rgba(255,255,255,0.3);
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+  }
 `
 
 export default ResetGlobalStyle;

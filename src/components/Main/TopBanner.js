@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import SlickSlider from './SlickSlider';
-import ArrowButton from './ArrowButton';
 
 const TopBannerContainer = styled.div`
   @media (min-width: 1200px) {
@@ -15,8 +14,6 @@ function TopBanner() {
     <>
       <TopBannerContainer>
         <SlickSlider />
-        <ArrowButton direction='next' />
-        <ArrowButton direction='prev' />
       </TopBannerContainer>
     </>
   )
