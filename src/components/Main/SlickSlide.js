@@ -2,18 +2,11 @@ import styled from 'styled-components';
 
 const SlickSlideContainer = styled.div`
   position: relative;
-  display: block;
-  float: left;
   height: 100%;
   min-height: 1px;
   outline: none;
 
-  @media (max-width: 1199px) {
-    width: calc(100vw - 80px);
-  }
-
   @media (min-width: 1200px) {
-    width: 1060px;
     padding: 0 12px;
     box-sizing: content-box;
   }

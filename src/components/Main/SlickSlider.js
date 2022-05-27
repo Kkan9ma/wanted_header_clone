@@ -2,6 +2,9 @@ import styled from 'styled-components';
 import SlickSlide from './SlickSlide';
 import { SlickSlideDatas } from '../../datas/SlideDatas';
 import ArrowButton from './ArrowButton';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const SlickSlideContainer = styled.div`
   margin-bottom: 0;
@@ -17,18 +20,10 @@ const SlickList = styled.div`
   padding: 0px 50px;
   position: relative;
   overflow: hidden;
-  display: block;
   margin: 0px;
 `;
 
 const SlickTrack = styled.div`
-  position: relative;
-  left: 0px;
-  top: 0px;
-
-  display: grid;
-  grid-auto-flow: column;  
-  width: 100%;
   white-space: nowrap;
   user-select: none;
   cursor: pointer;
@@ -40,22 +35,31 @@ const SlickTrack = styled.div`
 `;
 
 function SlickSlider() {
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    autoplay:true,
+  };
+
   return (
     <>
       <SlickSlideContainer>
         <SlickList>
           <SlickTrack>
-            {SlickSlideDatas.map(({ imageURL, cardTitle, cardSubTitle }, index) =>
-              <SlickSlide
-                key={index} imageURL={imageURL}
-                cardTitle={cardTitle} cardSubTitle={cardSubTitle}
-              />
-            )}
+            <Slider {...settings}>
+              {SlickSlideDatas.map(({ imageURL, cardTitle, cardSubTitle }, index) =>
+                  <SlickSlide
+                  key={index} imageURL={imageURL}
+                  cardTitle={cardTitle} cardSubTitle={cardSubTitle}
+                />
+              )}
+            </Slider>
           </SlickTrack>
         </SlickList>
       </SlickSlideContainer>
-      <ArrowButton direction='next' />
-      <ArrowButton direction='prev' />
     </>
   )
 }
