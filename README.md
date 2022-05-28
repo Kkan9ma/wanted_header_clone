@@ -1,4 +1,14 @@
 # 원티드 클론코딩
+* 커리어 플랫폼 서비스 Wanted의 사이트 일부를 클론한 프로젝트
+
+<p align="middle" >
+
+![demo](./wanted.gif)
+
+</p>
+
+## DEMO
+* [배포 링크](https://master--angry-yonath-082da3.netlify.app/)
 
 ## 구현 사항
 
@@ -10,7 +20,4 @@
 ### 2. 반응형(Responsive Web) 구현
   - [X] GNB, 슬라이드에 대한 반응형 구현. 
 
-### 3. Github Repository 주소와 배포 링크
-
-* [Repository](https://github.com/Kkan9ma/wanted-clone)
-* [배포 링크](https://angry-yonath-082da3.netlify.app/)
+### 3. Carousel
