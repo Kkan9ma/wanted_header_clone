@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import SlickSlide from './SlickSlide';
 import { SlickSlideDatas } from '../../datas/SlideDatas';
-import ArrowButton from './ArrowButton';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
